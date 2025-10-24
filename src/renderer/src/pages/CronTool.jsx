@@ -77,8 +77,11 @@ export default function CronTool() {
   return (
     <ScrollArea className="h-full">
       <div className="max-w-5xl mx-auto p-6 space-y-6">
-        <div className="text-center space-y-2">
-          <h1 className="text-2xl font-semibold tracking-tight">Cron Expression Parser</h1>
+        <div className="space-y-2">
+          <h1 className="text-2xl font-semibold tracking-tight flex items-center gap-2">
+            {' '}
+            <Calendar /> Cron Expression Parser
+          </h1>
           <p className="text-sm text-muted-foreground">
             Parse, build, and test cron expressions with visual builder
           </p>

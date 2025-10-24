@@ -6,6 +6,7 @@ import { registerBase64IPC } from './handlers/base64'
 import { registerFileIPC } from './handlers/file'
 import { registerClipboardIPC } from './handlers/clipboard'
 import { registerJSONIPC } from './handlers/json'
+import { registerHMACIPC } from './handlers/hmac'
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -56,3 +57,4 @@ registerBase64IPC()
 registerFileIPC()
 registerClipboardIPC()
 registerJSONIPC()
+registerHMACIPC()

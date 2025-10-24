@@ -8,7 +8,8 @@ import {
   ChevronRight,
   FileClock,
   FileDiff,
-  Calendar
+  Calendar,
+  Lock
 } from 'lucide-react'
 import { ScrollArea } from 'ui/scroll-area'
 import { Tabs, TabsList, TabsTrigger } from 'ui/tabs'
@@ -36,7 +37,16 @@ const topTabs = [
     label: 'Diff Checker',
     icon: <FileDiff className="w-5 h-5" />
   },
-  { path: 'cron', label: 'Cron', icon: <Calendar className="w-5 h-5" /> }
+  {
+    path: 'cron',
+    label: 'Cron',
+    icon: <Calendar className="w-5 h-5" />
+  },
+  {
+    path: 'hmac',
+    label: 'HMAC',
+    icon: <Lock className="w-5 h-5" />
+  }
 ]
 
 const bottomTabs = [

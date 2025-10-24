@@ -7,6 +7,7 @@ import Settings from 'pages/Settings'
 import TimestampConverterTool from 'pages/TimestampConverterTool'
 import DiffCheckerTool from 'pages/DiffCheckerTool'
 import CronTool from 'pages/CronTool'
+import HMACTool from 'pages/HMACTool'
 
 export default function App() {
   const isMac = window.electron?.process?.platform === 'darwin'
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="timestamp" element={<TimestampConverterTool />} />
             <Route path="diff" element={<DiffCheckerTool />} />
             <Route path="cron" element={<CronTool />} />
+            <Route path="hmac" element={<HMACTool />} />
           </Route>
         </Routes>
       </HashRouter>

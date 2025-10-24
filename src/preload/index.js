@@ -25,7 +25,12 @@ const json = {
   analyze: (text) => ipcRenderer.invoke('json:analyze', { text })
 }
 
-const api = { base64, file, clipboard, json }
+const hmac = {
+  generate: (data) => ipcRenderer.invoke('hmac:generate', data),
+  verify: (data) => ipcRenderer.invoke('hmac:verify', data)
+}
+
+const api = { base64, file, clipboard, json, hmac }
 
 if (process.contextIsolated) {
   try {

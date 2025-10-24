@@ -107,8 +107,8 @@ export default function TimestampConverterTool() {
     <ScrollArea className="h-full">
       <div className="max-w-5xl mx-auto p-6 flex flex-col space-y-8">
         {/* Header */}
-        <header className="text-center">
-          <h1 className="text-3xl font-bold tracking-tight flex items-center justify-center space-x-2 mb-1">
+        <header>
+          <h1 className="text-3xl font-bold tracking-tight flex items-center space-x-2 mb-1">
             <FileClock className="w-6 h-6 text-primary" />
             <span>Timestamp Converter</span>
           </h1>
