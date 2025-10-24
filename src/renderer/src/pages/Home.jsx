@@ -46,7 +46,8 @@ const topTabs = [
     path: 'hmac',
     label: 'HMAC',
     icon: <Lock className="w-5 h-5" />
-  }
+  },
+  { path: 'uuid', label: 'UUID Generator', icon: <FileText className="w-5 h-5" /> }
 ]
 
 const bottomTabs = [
