@@ -7,7 +7,8 @@ import {
   ChevronLeft,
   ChevronRight,
   FileClock,
-  FileDiff
+  FileDiff,
+  Calendar
 } from 'lucide-react'
 import { ScrollArea } from 'ui/scroll-area'
 import { Tabs, TabsList, TabsTrigger } from 'ui/tabs'
@@ -34,7 +35,8 @@ const topTabs = [
     path: 'diff',
     label: 'Diff Checker',
     icon: <FileDiff className="w-5 h-5" />
-  }
+  },
+  { path: 'cron', label: 'Cron', icon: <Calendar className="w-5 h-5" /> }
 ]
 
 const bottomTabs = [
@@ -71,7 +73,7 @@ export default function Home() {
         <div className="px-4 py-4 border-b border-border/50 flex items-center justify-between">
           {!collapsed && (
             <div className="flex-1 min-w-0">
-              <h1 className="text-base font-semibold tracking-tight truncate">DataBridge Utils</h1>
+              <h1 className="text-base font-semibold tracking-tight truncate">Dev Utils</h1>
               <p className="text-xs text-muted-foreground mt-0.5 truncate">
                 Essential dev utilities
               </p>

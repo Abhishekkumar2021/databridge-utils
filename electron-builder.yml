@@ -1,5 +1,5 @@
 appId: com.electron.app
-productName: DataBridge Utils
+productName: Dev Utils
 directories:
   buildResources: build
   output: dist
@@ -14,7 +14,7 @@ asarUnpack:
 
 # Windows configuration
 win:
-  executableName: databridge-utils
+  executableName: dev-utils
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}

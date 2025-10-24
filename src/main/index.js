@@ -38,7 +38,7 @@ function createWindow() {
   }
 }
 
-electronApp.setAppUserModelId('com.abhishek.databridge-utils')
+electronApp.setAppUserModelId('com.abhishek.dev-utils')
 
 app.whenReady().then(() => {
   createWindow()
