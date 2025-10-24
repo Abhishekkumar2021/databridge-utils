@@ -9,7 +9,9 @@ import ReactFlow, {
   MiniMap,
   useNodesState,
   useEdgesState,
-  MarkerType
+  MarkerType,
+  Position,
+  Handle
 } from 'reactflow'
 import 'reactflow/dist/style.css'
 import {
@@ -48,9 +50,9 @@ loader.config({ monaco })
 
 const COLORS = ['#8b5cf6', '#06b6d4', '#10b981', '#f59e0b', '#ef4444', '#ec4899']
 
-// Custom Node Component
 const CustomNode = ({ data }) => {
   const getNodeColor = (type) => {
+    // ... (rest of the getNodeColor function)
     switch (type) {
       case 'object':
         return 'bg-purple-500/20 border-purple-500'
@@ -69,8 +71,18 @@ const CustomNode = ({ data }) => {
 
   return (
     <div
-      className={`px-3 py-2 rounded-lg border-2 ${getNodeColor(data.type)} backdrop-blur-sm min-w-[120px]`}
+      className={`px-3 py-2 rounded-lg border-2 ${getNodeColor(
+        data.type
+      )} backdrop-blur-sm min-w-[120px]`}
     >
+      {/* Target Handle: For incoming connections (from the parent in the JSON hierarchy) */}
+      <Handle
+        type="target"
+        position={Position.Top}
+        isConnectable={true}
+        className="w-2! h-2! bg-primary/70! border-primary!"
+      />
+
       <div className="font-mono text-xs font-semibold text-foreground">{data.label}</div>
       {data.value !== undefined && (
         <div className="font-mono text-xs text-muted-foreground mt-1 truncate max-w-[200px]">
@@ -78,6 +90,16 @@ const CustomNode = ({ data }) => {
         </div>
       )}
       {data.count && <div className="text-xs text-muted-foreground mt-1">{data.count} items</div>}
+
+      {/* Source Handle: For outgoing connections (to children in the JSON hierarchy) */}
+      {(data.type === 'object' || data.type === 'array') && (
+        <Handle
+          type="source"
+          position={Position.Bottom}
+          isConnectable={true}
+          className="w-2! h-2! bg-primary/70! border-primary!" // Optional: style the handle
+        />
+      )}
     </div>
   )
 }

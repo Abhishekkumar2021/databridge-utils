@@ -38,6 +38,9 @@ export default function Home() {
     navigate(`/home/${value}`)
   }
 
+  const activeTabClass = 'bg-accent text-accent-foreground shadow-sm'
+  const hoverTabClass = 'hover:bg-muted/50'
+
   return (
     <div className="flex h-full bg-background text-foreground overflow-hidden">
       {/* Sidebar */}
@@ -77,11 +80,15 @@ export default function Home() {
                       <TooltipTrigger asChild>
                         <TabsTrigger
                           value={tab.path}
-                          className={`w-full gap-2.5 py-2.5 flex items-center transition-all
-            ${collapsed ? 'justify-center px-0' : 'justify-start px-3'}
-            data-[state=active]:bg-accent
-            data-[state=active]:text-white
-            hover:bg-accent/50 hover:text-white`}
+                          className={`
+                            w-full gap-2.5 py-2.5 flex items-center transition-all
+                            ${collapsed ? 'justify-center px-0' : 'justify-start px-3'}
+                            ${hoverTabClass}
+                            data-[state=active]:${activeTabClass}
+                            rounded-md
+                            text-sm
+                            font-medium
+                          `}
                         >
                           {tab.icon}
                           {!collapsed && <span className="text-sm font-medium">{tab.label}</span>}
@@ -109,9 +116,15 @@ export default function Home() {
                       <TooltipTrigger asChild>
                         <TabsTrigger
                           value={tab.path}
-                          className={`w-full ${
-                            collapsed ? 'justify-center px-0' : 'justify-start px-3'
-                          } gap-2.5 py-2.5 data-[state=active]:bg-accent data-[state=active]:shadow-sm transition-all`}
+                          className={`
+                            w-full gap-2.5 py-2.5 transition-all
+                            ${collapsed ? 'justify-center px-0' : 'justify-start px-3'}
+                            ${hoverTabClass}
+                            data-[state=active]:${activeTabClass}
+                            rounded-md
+                            text-sm
+                            font-medium
+                          `}
                         >
                           {tab.icon}
                           {!collapsed && <span className="text-sm font-medium">{tab.label}</span>}
