@@ -4,6 +4,7 @@ import Base64Tool from 'pages/Base64Tool'
 import { Toaster } from 'components/ui/sonner'
 import JSONTool from 'pages/JSONTool'
 import Settings from 'pages/Settings'
+import TimestampConverterTool from 'pages/TimestampConverterTool'
 
 export default function App() {
   const isMac = window.electron?.process?.platform === 'darwin'
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="base64" element={<Base64Tool />} />
             <Route path="json" element={<JSONTool />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="timestamp" element={<TimestampConverterTool />} />
           </Route>
         </Routes>
       </HashRouter>

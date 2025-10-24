@@ -209,8 +209,10 @@ export default function Base64Tool() {
     <ScrollArea className="h-full">
       <div className="max-w-5xl mx-auto p-6 space-y-6">
         {/* Header */}
-        <div className="text-center space-y-2">
-          <h1 className="text-2xl font-semibold tracking-tight">Base64 Encoder/Decoder</h1>
+        <div className="space-y-2">
+          <h1 className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
+            <FileText className="w-6 h-6 text-primary" /> Base64 Encoder/Decoder
+          </h1>
           <p className="text-sm text-muted-foreground">
             Encode and decode text or files with full Unicode support
           </p>

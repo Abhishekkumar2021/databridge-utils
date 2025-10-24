@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
-import { FileJson, FileText, Settings, ChevronLeft, ChevronRight } from 'lucide-react'
+import { FileJson, FileText, Settings, ChevronLeft, ChevronRight, FileClock } from 'lucide-react'
 import { ScrollArea } from 'ui/scroll-area'
 import { Tabs, TabsList, TabsTrigger } from 'ui/tabs'
 import { Button } from 'ui/button'
@@ -10,12 +10,17 @@ const topTabs = [
   {
     path: 'base64',
     label: 'Base64',
-    icon: <FileText className="w-4 h-4" />
+    icon: <FileText className="w-5 h-5" />
   },
   {
     path: 'json',
     label: 'JSON',
-    icon: <FileJson className="w-4 h-4" />
+    icon: <FileJson className="w-5 h-5" />
+  },
+  {
+    path: 'timestamp',
+    label: 'Timestamp',
+    icon: <FileClock className="w-5 h-5" />
   }
 ]
 
@@ -23,7 +28,7 @@ const bottomTabs = [
   {
     path: 'settings',
     label: 'Settings',
-    icon: <Settings className="w-4 h-4" />
+    icon: <Settings className="w-5 h-5" />
   }
 ]
 
@@ -38,7 +43,7 @@ export default function Home() {
     navigate(`/home/${value}`)
   }
 
-  const activeTabClass = 'bg-accent text-accent-foreground shadow-sm'
+  const activeTabClass = 'bg-accent text-accent-foreground'
   const hoverTabClass = 'hover:bg-muted/50'
 
   return (
@@ -86,7 +91,7 @@ export default function Home() {
                             ${hoverTabClass}
                             data-[state=active]:${activeTabClass}
                             rounded-md
-                            text-sm
+                            text-md
                             font-medium
                           `}
                         >

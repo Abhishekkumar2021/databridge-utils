@@ -45,6 +45,7 @@ import {
   Search
 } from 'lucide-react'
 import { toast } from 'sonner'
+import { useTheme } from 'next-themes'
 
 loader.config({ monaco })
 
@@ -118,8 +119,8 @@ export default function JSONTool() {
   const [indent, setIndent] = useState('2')
   const [nodes, setNodes, onNodesChange] = useNodesState([])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
+  const { resolvedTheme } = useTheme()
 
-  // Generate flow graph from JSON
   // Generate flow graph from JSON
   const generateFlowGraph = useCallback((data) => {
     const newNodes = []
@@ -420,8 +421,10 @@ export default function JSONTool() {
     <ScrollArea className="h-full">
       <div className="max-w-5xl mx-auto p-6 space-y-6">
         {/* Header */}
-        <div className="text-center space-y-2">
-          <h1 className="text-2xl font-semibold tracking-tight">JSON Visualizer & Analyzer</h1>
+        <div className="space-y-2">
+          <h1 className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
+            <FileJson className="w-6 h-6 text-primary" /> JSON Visualizer & Analyzer
+          </h1>
           <p className="text-sm text-muted-foreground">
             Parse, visualize, analyze and explore JSON data with interactive tools
           </p>
@@ -456,7 +459,7 @@ export default function JSONTool() {
                 language="json"
                 value={input}
                 onChange={setInput}
-                theme="vs-dark"
+                theme={resolvedTheme == 'dark' ? 'vs-dark' : 'vs-light'}
                 options={{
                   minimap: { enabled: false },
                   fontSize: 13,
@@ -737,7 +740,7 @@ export default function JSONTool() {
                       height="500px"
                       language="json"
                       value={JSON.stringify(parsedData, null, 2)}
-                      theme="vs-dark"
+                      theme={resolvedTheme == 'dark' ? 'vs-dark' : 'vs-light'}
                       options={{
                         readOnly: true,
                         minimap: { enabled: false },

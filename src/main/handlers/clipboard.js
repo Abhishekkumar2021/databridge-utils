@@ -1,5 +1,5 @@
 import { ipcMain } from 'electron'
-import clipboardy from 'clipboardy'
+import clipboardy from 'node-clipboardy'
 
 export function registerClipboardIPC() {
   ipcMain.handle('clipboard:write', async (_, { text }) => {
