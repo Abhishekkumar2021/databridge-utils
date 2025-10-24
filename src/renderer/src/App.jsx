@@ -9,6 +9,7 @@ import DiffCheckerTool from 'pages/DiffCheckerTool'
 import CronTool from 'pages/CronTool'
 import HMACTool from 'pages/HMACTool'
 import UUIDTool from 'pages/UUIDTool'
+import Pomodoro from 'pages/Pomodoro'
 
 export default function App() {
   const isMac = window.electron?.process?.platform === 'darwin'
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="cron" element={<CronTool />} />
             <Route path="hmac" element={<HMACTool />} />
             <Route path="uuid" element={<UUIDTool />} />
+            <Route path="pomodoro" element={<Pomodoro />} />
           </Route>
         </Routes>
       </HashRouter>

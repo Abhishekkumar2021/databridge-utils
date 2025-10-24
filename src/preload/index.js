@@ -30,7 +30,11 @@ const hmac = {
   verify: (data) => ipcRenderer.invoke('hmac:verify', data)
 }
 
-const api = { base64, file, clipboard, json, hmac }
+const pomodoro = {
+  notify: (payload) => ipcRenderer.invoke('pomodoro:notify', payload)
+}
+
+const api = { base64, file, clipboard, json, hmac, pomodoro }
 
 if (process.contextIsolated) {
   try {

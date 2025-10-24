@@ -7,6 +7,7 @@ import { registerFileIPC } from './handlers/file'
 import { registerClipboardIPC } from './handlers/clipboard'
 import { registerJSONIPC } from './handlers/json'
 import { registerHMACIPC } from './handlers/hmac'
+import { registerPomodoroIPC } from './handlers/pomodoro'
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -58,3 +59,4 @@ registerFileIPC()
 registerClipboardIPC()
 registerJSONIPC()
 registerHMACIPC()
+registerPomodoroIPC()

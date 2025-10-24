@@ -9,7 +9,8 @@ import {
   FileClock,
   FileDiff,
   Calendar,
-  Lock
+  Lock,
+  Timer
 } from 'lucide-react'
 import { ScrollArea } from 'ui/scroll-area'
 import { Tabs, TabsList, TabsTrigger } from 'ui/tabs'
@@ -47,7 +48,8 @@ const topTabs = [
     label: 'HMAC',
     icon: <Lock className="w-5 h-5" />
   },
-  { path: 'uuid', label: 'UUID Generator', icon: <FileText className="w-5 h-5" /> }
+  { path: 'uuid', label: 'UUID Generator', icon: <FileText className="w-5 h-5" /> },
+  { path: 'pomodoro', label: 'Pomodoro', icon: <Timer className="w-5 h-5" /> }
 ]
 
 const bottomTabs = [
