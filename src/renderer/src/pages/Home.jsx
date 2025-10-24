@@ -1,6 +1,14 @@
 import { useState } from 'react'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
-import { FileJson, FileText, Settings, ChevronLeft, ChevronRight, FileClock } from 'lucide-react'
+import {
+  FileJson,
+  FileText,
+  Settings,
+  ChevronLeft,
+  ChevronRight,
+  FileClock,
+  FileDiff
+} from 'lucide-react'
 import { ScrollArea } from 'ui/scroll-area'
 import { Tabs, TabsList, TabsTrigger } from 'ui/tabs'
 import { Button } from 'ui/button'
@@ -21,6 +29,11 @@ const topTabs = [
     path: 'timestamp',
     label: 'Timestamp',
     icon: <FileClock className="w-5 h-5" />
+  },
+  {
+    path: 'diff',
+    label: 'Diff Checker',
+    icon: <FileDiff className="w-5 h-5" />
   }
 ]
 

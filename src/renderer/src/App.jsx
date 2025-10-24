@@ -5,6 +5,7 @@ import { Toaster } from 'components/ui/sonner'
 import JSONTool from 'pages/JSONTool'
 import Settings from 'pages/Settings'
 import TimestampConverterTool from 'pages/TimestampConverterTool'
+import DiffCheckerTool from 'pages/DiffCheckerTool'
 
 export default function App() {
   const isMac = window.electron?.process?.platform === 'darwin'
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="json" element={<JSONTool />} />
             <Route path="settings" element={<Settings />} />
             <Route path="timestamp" element={<TimestampConverterTool />} />
+            <Route path="diff" element={<DiffCheckerTool />} />
           </Route>
         </Routes>
       </HashRouter>
