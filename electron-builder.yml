@@ -7,22 +7,29 @@ files:
   - '!**/.vscode/*'
   - '!src/*'
   - '!electron.vite.config.{js,ts,mjs,cjs}'
-  - '!{.eslintcache,eslint.config.mjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{.eslintcache,.prettierignore,.prettierrc.yaml,CHANGELOG.md,README.md,dev-app-update.yml}'
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
+asar: true
 asarUnpack:
   - resources/**
 
 # Windows configuration
 win:
+  icon: build/icons/win/icon.ico
   executableName: dev-utils
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
   createDesktopShortcut: always
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  perMachine: true
+  allowElevation: true
 
 # macOS configuration
 mac:
+  icon: build/icons/mac/icon.icns
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:
     NSCameraUsageDescription: "Application requests access to the device's camera."
@@ -35,11 +42,12 @@ dmg:
 
 # Linux configuration
 linux:
+  icon: build/icons/png
   target:
     - AppImage
     - snap
     - deb
-  maintainer: electronjs.org
+  maintainer: abhishek.com
   category: Utility
 appImage:
   artifactName: ${name}-${version}.${ext}
