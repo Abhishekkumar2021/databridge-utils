@@ -119,10 +119,10 @@ export default function HMACTool() {
 
   return (
     <ScrollArea className="h-full">
-      <div className="max-w-5xl mx-auto py-10 px-6 space-y-10">
+      <div className="w-full mx-auto p-6 space-y-10">
         {/* Header */}
         <div className="space-y-2">
-          <h1 className="text-4xl font-extrabold tracking-tight flex items-center gap-3">
+          <h1 className="text-2xl font-extrabold tracking-tight flex items-center gap-3">
             <Lock className="w-8 h-8 text-primary/80" />
             HMAC Signature Utility
           </h1>

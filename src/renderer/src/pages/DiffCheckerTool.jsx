@@ -68,10 +68,10 @@ export default function DiffCheckerTool() {
 
   return (
     <ScrollArea className="h-full">
-      <div className="max-w-6xl mx-auto p-6 space-y-6">
+      <div className="w-full mx-auto p-6 space-y-6">
         {/* Header */}
         <header className="space-y-1">
-          <h1 className="text-3xl font-bold flex items-center space-x-2">
+          <h1 className="text-2xl font-bold flex items-center space-x-2">
             <FileDiff className="w-7 h-7 text-primary" />
             <span>Diff Checker</span>
           </h1>

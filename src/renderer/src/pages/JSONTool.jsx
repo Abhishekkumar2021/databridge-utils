@@ -419,7 +419,7 @@ export default function JSONTool() {
 
   return (
     <ScrollArea className="h-full">
-      <div className="max-w-5xl mx-auto p-6 space-y-6">
+      <div className="w-full mx-auto p-6 space-y-6">
         {/* Header */}
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight flex gap-2 items-center">

@@ -1,4 +1,4 @@
-appId: com.electron.app
+appId: com.abhishek.devutils
 productName: Dev Utils
 directories:
   buildResources: build
@@ -16,16 +16,19 @@ asarUnpack:
 # Windows configuration
 win:
   icon: build/icons/win/icon.ico
+  target:
+    - nsis
   executableName: dev-utils
 nsis:
-  artifactName: ${name}-${version}-setup.${ext}
-  shortcutName: ${productName}
-  uninstallDisplayName: ${productName}
-  createDesktopShortcut: always
-  oneClick: false
+  oneClick: false                # Show wizard instead of instant install
+  perMachine: true               # Install for all users (requires admin)
   allowToChangeInstallationDirectory: true
-  perMachine: true
-  allowElevation: true
+  allowElevation: true           # Ask for admin if needed
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Dev Utils
+  artifactName: ${name}-${version}-setup.${ext}
+  uninstallDisplayName: Dev Utils
 
 # macOS configuration
 mac:

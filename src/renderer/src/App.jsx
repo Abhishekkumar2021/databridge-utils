@@ -15,7 +15,7 @@ export default function App() {
   const isMac = window.electron?.process?.platform === 'darwin'
 
   return (
-    <div className="flex flex-col h-screen select-none">
+    <div className="flex flex-col h-screen">
       <Toaster />
 
       {/* macOS draggable titlebar */}

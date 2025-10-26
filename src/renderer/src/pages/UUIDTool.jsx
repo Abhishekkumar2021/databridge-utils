@@ -61,7 +61,7 @@ export default function UUIDTool() {
 
   return (
     <ScrollArea className="h-full">
-      <div className="max-w-5xl mx-auto p-6 space-y-8">
+      <div className="w-full mx-auto p-6 space-y-8">
         {/* Header */}
         <div className="flex flex-col space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
@@ -156,7 +156,7 @@ export default function UUIDTool() {
                   >
                     <span className="flex items-center space-x-2">
                       {/* Circular Index Marker */}
-                      <span className="shrink-0 w-5 h-5 rounded-full bg-accent text-white flex items-center justify-center text-[10px] font-bold shadow-sm">
+                      <span className="shrink-0 w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] font-bold shadow-sm">
                         {index + 1}
                       </span>
 

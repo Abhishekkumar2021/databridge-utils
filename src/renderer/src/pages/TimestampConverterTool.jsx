@@ -105,10 +105,10 @@ export default function TimestampConverterTool() {
 
   return (
     <ScrollArea className="h-full">
-      <div className="max-w-5xl mx-auto p-6 flex flex-col space-y-8">
+      <div className="w-full mx-auto p-6 flex flex-col space-y-8">
         {/* Header */}
         <header>
-          <h1 className="text-3xl font-bold tracking-tight flex items-center space-x-2 mb-1">
+          <h1 className="text-2xl font-bold tracking-tight flex items-center space-x-2 mb-1">
             <FileClock className="w-6 h-6 text-primary" />
             <span>Timestamp Converter</span>
           </h1>
@@ -160,9 +160,9 @@ export default function TimestampConverterTool() {
           </CardContent>
         </Card>
 
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4 flex-wrap">
           {/* Input Converter */}
-          <Card className="shadow-md rounded-md w-full md:w-80">
+          <Card className="w-full rounded-md shadow-md lg:w-80">
             <CardHeader>
               <CardTitle className="flex items-center space-x-2 text-lg">
                 <ArrowRight className="w-4 h-4 text-primary" />
@@ -247,7 +247,7 @@ export default function TimestampConverterTool() {
                     key={idx}
                     className="flex items-center justify-between bg-card/50 p-2 rounded-md shadow-sm hover:bg-card/60 transition-colors text-sm"
                   >
-                    <div className="flex items-center space-x-2">
+                    <div className="min-w-28 flex items-center space-x-2">
                       {item.icon}
                       <span className="font-medium text-muted-foreground">{item.title}</span>
                     </div>

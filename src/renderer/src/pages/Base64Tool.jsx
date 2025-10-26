@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Button } from 'ui/button'
 import { Textarea } from 'ui/textarea'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from 'ui/card'
 import { ScrollArea } from 'ui/scroll-area'
-import { Alert, AlertDescription } from 'ui/alert'
 import { Switch } from 'ui/switch'
 import { Label } from 'ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'ui/tabs'
@@ -14,7 +13,6 @@ import {
   Upload,
   Download,
   X,
-  AlertCircle,
   FileText,
   Image as ImageIcon,
   Trash2,
@@ -22,6 +20,7 @@ import {
   EyeOff
 } from 'lucide-react'
 import { toast } from 'sonner'
+import prettyBytes from 'pretty-bytes'
 
 export default function Base64Tool() {
   const [mode, setMode] = useState('text') // 'text' or 'file'
@@ -134,7 +133,7 @@ export default function Base64Tool() {
         setFileBase64(result)
         setFileInfo({
           name,
-          size: (size / 1024).toFixed(2) + ' KB',
+          size: prettyBytes(size),
           mimeType,
           path
         })
@@ -207,7 +206,7 @@ export default function Base64Tool() {
 
   return (
     <ScrollArea className="h-full">
-      <div className="max-w-5xl mx-auto p-6 space-y-6">
+      <div className="w-full mx-auto p-6 space-y-6">
         {/* Header */}
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
